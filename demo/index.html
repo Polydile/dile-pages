@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dile-pages demo</title>
+  <style>
+  body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #404040;
+  }
+  </style>
+</head>
+<body>
+  <h1>dile-pages demo</h1>
+  <p>En este ejemplo tenemos varias páginas que vamos a poder intercambiar.</p>
+  <select id="elselect">
+    <option value="page1">Página 1</option>
+    <option value="page2">Página 2</option>
+    <option value="page3">Página 3</option>
+  </select>
+  <dile-pages selected="page1" attrforselected="name" id="elpages">
+    <div name="page1">
+      <h2>Page 1</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
+    </div>
+    <div name="page2">
+      <h2>Page 2</h2>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
+    </div>
+    <section name="page3">
+      <h2>Page three</h2>
+      <p>Just another page</p>
+    </section>
+  </dile-pages>
+  <footer>
+    &copy; EscuelaIT
+  </footer>
+  <script src="../dile-pages.js" type="module"></script>
+  <script>
+    document.getElementById('elselect').addEventListener('change', function() {
+      console.log(this.value);
+      document.getElementById('elpages').setAttribute('selected', this.value)
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "dile-pages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dile-pages.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Polydile/dile-pages.git"
+  },
+  "keywords": [
+    "LitElement",
+    "Polymer",
+    "polydile",
+    "iron-pages",
+    "pages",
+    "web",
+    "component",
+    "element"
+  ],
+  "author": "Miguel Angel Alvarez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Polydile/dile-pages/issues"
+  },
+  "homepage": "https://github.com/Polydile/dile-pages#readme",
+  "dependencies": {
+    "lit-element": "^2.1.0"
+  }
+}
