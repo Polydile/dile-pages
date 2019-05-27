@@ -10,17 +10,29 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #404040;
   }
+  .card1 {
+    background-color: bisque;
+    color: blue;
+    padding: 15px;
+    margin: 10px 0;
+  }
+  .card2 {
+    background-color: orange;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+  }
   </style>
 </head>
 <body>
   <h1>dile-pages demo</h1>
   <p>Using buttons as navigation</p>
-  <tabs-example>
-    <div name="page1">
+  <tabs-example selected="page2" attrForSelected="name">
+    <div class="card1" name="page1">
       <h2>Page 1</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
     </div>
-    <div name="page2">
+    <div class="card2" name="page2">
       <h2>Page 2</h2>
       <ul>
         <li>item 1</li>
@@ -49,12 +61,12 @@
   <script src="../dile-pages.js" type="module"></script>
   <script src="./tabs-example.js" type="module"></script>
   
-  <script>
+  <!-- <script>
     document.getElementById('elselect').addEventListener('change', function() {
       console.log(this.value);
       document.getElementById('elpages').setAttribute('selected', this.value)
     });
-  </script>
+  </script> -->
 
   
 </body>

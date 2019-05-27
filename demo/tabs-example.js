@@ -1,16 +1,7 @@
 import { LitElement, html } from 'lit-element';
+import { DilePages } from '../dile-pages';
 
-export class TabsExample extends LitElement {
-  static get properties() {
-    return {
-      currentPage: { type: String }
-    };
-  }
-
-  constructor() {
-    super();
-    this.currentPage = 'page3';
-  }
+export class TabsExample extends DilePages {
 
   render() {
     return html`
@@ -20,18 +11,14 @@ export class TabsExample extends LitElement {
       <button @click="${this.changePage}" data="page3">Page 3</button>
       <button @click="${this.changePage}" data="more">More...</button>
     </nav>
-    <dile-pages selected="${this.currentPage}" attrforselected="name" id="pages">
-    </dile-pages>
+    <slot></slot>
     `;
   }
 
-  firstUpdated() {
-    this.shadowRoot.getElementById('pages').initializeExternalPages(this.innerHTML);
-  }
-
+  
   changePage(e) {
     console.log(e.target.getAttribute('data')); 
-    this.currentPage = e.target.getAttribute('data');
+    this.selected = e.target.getAttribute('data');
   }
 }
 customElements.define('tabs-example', TabsExample);
