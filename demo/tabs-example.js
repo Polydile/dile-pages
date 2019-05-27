@@ -18,6 +18,7 @@ export class TabsExample extends LitElement {
       <button @click="${this.changePage}" data="page1">Page 1</button>
       <button @click="${this.changePage}" data="page2">Page 2</button>
       <button @click="${this.changePage}" data="page3">Page 3</button>
+      <button @click="${this.changePage}" data="more">More...</button>
     </nav>
     <dile-pages selected="${this.currentPage}" attrforselected="name" id="pages">
     </dile-pages>
@@ -25,8 +26,7 @@ export class TabsExample extends LitElement {
   }
 
   firstUpdated() {
-    this.shadowRoot.getElementById('pages').innerHTML = this.innerHTML;
-    this.shadowRoot.getElementById('pages')._pageInitialization();
+    this.shadowRoot.getElementById('pages').initializeExternalPages(this.innerHTML);
   }
 
   changePage(e) {
