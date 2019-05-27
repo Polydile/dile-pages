@@ -1,8 +1,10 @@
 # dile-pages
 
-Simple iron-pages adaptation for LitElement.
+Simple iron-pages adaptation for LitElement. 
 
-This element is used to show one of several "pages". The pages are the children elements of the component. You can use 2 properties to configure the current active page:
+This element is used to show one of several "pages". The pages are the children elements of the component. In brief, this component only shows one of it's children elements and is able to interchange the active children with a simple animation.
+
+You can use 2 properties to configure the current active page:
 
 ## Properties
 
