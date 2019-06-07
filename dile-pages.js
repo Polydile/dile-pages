@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit-element';
+import { LitElement, html, css } from 'lit-element';
 
 export class DilePages extends LitElement {
   static get properties() {
@@ -22,6 +22,13 @@ export class DilePages extends LitElement {
     this._pageInitialization();
   }
 
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+      }
+    `;
+  }
   /**
    * Private method to process the light DOM and it's elements, creating and updating necesary styles 
    *

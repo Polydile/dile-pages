@@ -10,29 +10,52 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #404040;
   }
+  h1, h2, h3 {
+    font-weight: 300;
+  }
+  h2 {
+    color: rgb(41, 114, 163);
+  }
+  hr {
+    margin-bottom: 30px;
+  }
   .cards {
     background-color: bisque;
     color: blue;
     padding: 15px;
     margin: 10px 0;
   }
+  .card1 {
+    background-color: bisque;
+    color: blue;
+    padding: 15px;
+    margin: 10px 0;
+  }
+  .card2 {
+    background-color: orange;
+    color: white;
+    padding: 15px;
+    margin: 10px 0;
+  }
+  </style>
   </style>
 </head>
 <body>
   <h1>dile-pages demo</h1>
-  <p>En este ejemplo tenemos varias páginas que vamos a poder intercambiar.</p>
+  <h2>Example 1</h2>
+  <p>In this demo you can choose any page by selecting in the select form element bellow.</p>
   <select id="elselect">
-    <option value="page1">Página 1</option>
-    <option value="page2">Página 2</option>
-    <option value="page3">Página 3</option>
+    <option value="page1">Page 1</option>
+    <option value="page2">Page 2</option>
+    <option value="page3">Page 3</option>
   </select>
   <dile-pages selected="page1" attrforselected="name" id="elpages">
     <div class="cards" name="page1">
-      <h2>Page 1</h2>
+      <h3>Page 1</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
     </div>
     <div name="page2">
-      <h2>Page 2</h2>
+      <h3>Page 2</h3>
       <ul>
         <li>item 1</li>
         <li>item 2</li>
@@ -41,18 +64,80 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
     </div>
     <section name="page3">
-      <h2>Page three</h2>
+      <h3>Page three</h3>
       <p>Just another page</p>
     </section>
   </dile-pages>
+
+  <hr>
+  <h2>Example 2</h2>
+  <p>
+    In this example we are indexing the active page with a numeric index.
+  </p>
+  <select id="elselect2">
+    <option value="0">Page 1</option>
+    <option value="1">Page 2</option>
+    <option value="2">Page 3</option>
+  </select>
+  <dile-pages selected="2"  id="elpages2">
+    <span>
+      <h3>Page 1</h3>
+    </span>
+    <article>
+      <h3>Page 2</h3>
+    </article>
+    <div>
+      <h3>Page three</h3>
+    </div>
+  </dile-pages>
+
+  <hr>
+  <h2>Example 3</h2>
+  <p>
+    This example shows who you coud create a tabs component, based on the page interchanger provided by dile-pages web element. 
+  </p>
+
+  <tabs-example selected="page2" attrForSelected="name">
+    <div class="card1" name="page1">
+      <h3>Page 1</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
+    </div>
+    <div class="card2" name="page2">
+      <h3>Page 2</h3>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde excepturi atque, et quaerat vero saepe maiores, maxime dolore officiis earum cumque temporibus tenetur, possimus deserunt magni itaque! Reiciendis, assumenda quo?</p>
+    </div>
+    <section name="page3">
+      <h3>Page three</h3>
+      <p>Just another page</p>
+    </section>
+    <section name="more">
+      <h3>More page</h3>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt illo adipisci qui hic. Explicabo, est repellat. Ducimus nulla ab nobis. Facilis, consequatur magnam sed mollitia iusto amet porro? Maiores, labore.</p>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </section>
+  </tabs-example>
+
   <footer>
     &copy; EscuelaIT
   </footer>
   <script src="../dile-pages.js" type="module"></script>
+  <script src="./tabs-example.js" type="module"></script>
+
   <script>
     document.getElementById('elselect').addEventListener('change', function() {
-      console.log(this.value);
       document.getElementById('elpages').setAttribute('selected', this.value)
+    });
+    document.getElementById('elselect2').addEventListener('change', function() {
+      document.getElementById('elpages2').setAttribute('selected', this.value)
     });
   </script>
 </body>
