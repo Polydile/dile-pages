@@ -1,10 +1,27 @@
-# dile-pages
+# \<dile-pages>
 
 Simple iron-pages adaptation for LitElement. 
 
 This element is used to show one of several "pages". The pages are the direct children elements of the component. In brief, this component only shows one of it's children elements, and is able to interchange the active children with a simple animation.
 
 Go to [DEMOS page](https://dile-pages.polydile.com).
+
+## Installation
+```bash
+npm i dile-pages
+```
+
+## Usage
+```html
+<script type="module">
+  import 'dile-pages/dile-pages.js';
+</script>
+
+<dile-pages selected="1">
+  <div> View 1</div>
+  <div> View 2</div>
+</dile-pages>
+```
 
 ## Properties
 
@@ -13,7 +30,7 @@ You can use 2 properties to configure the current active page:
 - selected: A string to select the active page.
 - attrForSelected (optional): A string with the attribute name in the page elements to match with "selected" property.
 
-If you don't provide a value to attrForSelected property, "selected" will be matched to the index of the page (selected=0 corresponds to the first page, selected=1 to the second... )
+If you don't provide a value to attrForSelected property, "selected" will be matched to the index of the children element (selected=0 corresponds to the first page, selected=1 to the second... )
 
 ## Example
 
