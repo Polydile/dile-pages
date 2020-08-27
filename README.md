@@ -1,5 +1,8 @@
 # \<dile-pages>
 
+**This package has moved** and is now available at [@dile/dile-pages](https://github.com/Polydile/dile-components). Please update your dependencies. This repository is no longer maintained.
+
+
 Simple iron-pages adaptation for LitElement. 
 
 This element is used to show one of several "pages". The pages are the direct children elements of the component. In brief, this component only shows one of it's children elements, and is able to interchange the active children with a simple animation.
