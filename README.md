@@ -1,6 +1,8 @@
 # \<dile-pages>
 
-**This package has moved** and is now available at [@dile/dile-pages](https://github.com/Polydile/dile-components). Please update your dependencies. This repository is no longer maintained.
+> **This package has moved** and is now available at [@dile/ui](https://github.com/Polydile/dile-components). Please update your dependencies. This repository is no longer maintained. You can read the documentation at [Dile Components](https://dile-components.com/).
+
+El cambio es solo en la parte final: "Read the docs" a "You can read the documentation" para hacerlo un poco más claro. Pero en general, tu frase es completamente comprensible y correcta.
 
 
 Simple iron-pages adaptation for LitElement. 
